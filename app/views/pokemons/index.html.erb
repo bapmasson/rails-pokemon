@@ -4,10 +4,10 @@
   <div class="row">
     <% @pokemons.each do |pokemon| %>
     <div class="col-3 my-3">
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <%= cl_image_tag pokemon.photo.key, class: "card-img-top", alt: pokemon.name, crop: :fill %>
         <div class="card-body">
-          <h5 class="card-title"><%= pokemon.name %></h5>
+          <h5 class="card-title"><%= link_to pokemon.name, pokemon_path(pokemon), style: "text-decoration: none;" %></h5>
           <p class="card-text"><%= pokemon.element_type %></p>
         </div>
       </div>
