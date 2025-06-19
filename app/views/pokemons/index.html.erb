@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Pokedex</h1>
+
+  <div class="row">
+    <% @pokemons.each do |pokemon| %>
+    <div class="col-3 my-3">
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag pokemon.photo.key, class: "card-img-top", alt: pokemon.name, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= pokemon.name %></h5>
+          <p class="card-text"><%= pokemon.element_type %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
